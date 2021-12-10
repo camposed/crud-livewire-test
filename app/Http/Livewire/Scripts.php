@@ -58,7 +58,7 @@ class Scripts extends Component
     }
 
     public function guardar(){
-
+        dd($this->name);
         Script::updateOrCreate(['id'=>$this->id],
             [
                 'name' => $this->name,
