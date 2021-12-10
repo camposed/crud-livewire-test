@@ -59,6 +59,15 @@ class Scripts extends Component
 
     public function guardar(){
         
+        $script = new Script();
+        
+        $script->name => $this->name;
+        $script->name => $this->description;
+        $script->name => $this->code;
+        
+        $script->save();
+        
+        /*
         Script::updateOrCreate(
             [   
                 'id' => $this->id
@@ -67,7 +76,7 @@ class Scripts extends Component
                 'code' => $this->code
             ]
         );
-
+*/
         session()->flash('message', $this->id_script ? 'Registro actualizado.' : 'Se ha creado el registro.');
 
         $this->cerrarModal();
