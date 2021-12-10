@@ -57,15 +57,27 @@ class Scripts extends Component
         session()->flash('message','Registro eliminado.');
     }
 
-    public function guardar(){
+    public function guardar(){       
         
-        $script = new Script();
+         $script = Script::where('id',$this->id)->first();
+             
+        if ( $script !== null ){
+            Script::update(
+                [   
+                    'name' => $this->name,
+                    'description' => $this->description,
+                    'code' => $this->code
+                ]
+        }else{
+            Script::Create(
+                [   
+                    'name' => $this->name,
+                    'description' => $this->description,
+                    'code' => $this->code
+                ]
+        }
         
-        $script->name = $this->name;
-        $script->description = $this->description;
-        $script->code = $this->code;
-        
-        $script->save();
+
         
         /*
         Script::updateOrCreate(
