@@ -61,9 +61,9 @@ class Scripts extends Component
         
         $script = new Script();
         
-        $script->name => $this->name;
-        $script->name => $this->description;
-        $script->name => $this->code;
+        $script->name = $this->name;
+        $script->name = $this->description;
+        $script->name = $this->code;
         
         $script->save();
         
